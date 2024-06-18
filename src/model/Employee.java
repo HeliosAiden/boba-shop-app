@@ -97,8 +97,7 @@ public class Employee extends Models {
         e.setName(rs.getNString("name"));
         e.setPhoneNumber(rs.getNString("phoneNumber"));
         e.setStartDate(rs.getDate("startDate"));
-        e.setPermission(EmployeePermission.getById(rs.getNString("permission")));
-        e.setSalary(rs.getInt("salary"));
+        e.setPermission(EmployeePermission.getById(rs.getNString("permissionId")));
         return e;
     }
 

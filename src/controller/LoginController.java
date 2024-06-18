@@ -63,11 +63,11 @@ public class LoginController {
 
             switch (employee.getPermission()) {
                 case MANAGER -> //Admin controller
-                    // AdminDashboardController controller = new AdminDashboardController(new AdminDashboardView());
-                    // controller.getView().setPanel(new HomeView());
+                    // AdminDashboardController adminController = new AdminDashboardController(new AdminDashboardView());
+                    // adminController.getView().setPanel(new HomeView());
                     view.dispose();// Tắt form đăng nhập
-                case STAFF -> //EmployeeDashboardController controller1 = new EmployeeDashboardController(new EmployeeDashboardView());
-                    // controller1.getView().setPanel(new HomeView());
+                case STAFF -> //EmployeeDashboardController employeeController = new EmployeeDashboardController(new EmployeeDashboardView());
+                    // employeeController.getView().setPanel(new HomeView());
                     view.dispose();// Tắt form đăng nhập
                 case INACTIVE -> {
                     view.showError("Tài khoản của bạn đã bị khóa.\nVui lòng liên hệ admin để biết thêm chi tiết");
