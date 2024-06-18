@@ -93,7 +93,7 @@ public class AdminDashboardView extends javax.swing.JFrame {
         panel.setVisible(true);
     }
 
-    
+    // TODO: Refactor initComponents()
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 

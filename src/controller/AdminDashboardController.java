@@ -1,6 +1,6 @@
 package controller;
 
-// import controller.admin.CustomerManagerController;
+ import controller.admin.CustomerManagerController;
 // import controller.admin.EmployeeManagerController;
 // import controller.admin.FoodCategoryManagerController;
 // import controller.admin.FoodItemManagerController;
@@ -38,11 +38,7 @@ import javax.swing.JPanel;
 // import views.admin.TableManagerView;
 // import views.employee.InformationView;
 
-/**
- * createAt Dec 15, 2020
- *
- * @author Đỗ Tuấn Anh <daclip26@gmail.com>
- */
+// TODO: init AdminDashboardController
 public class AdminDashboardController {
 
 }

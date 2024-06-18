@@ -1,17 +1,13 @@
-package controllers;
+package controller;
 
 import java.awt.Color;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import views.admin.ManagerPaneView;
+import view.admin.ManagerPaneView;
 
-/**
- * createAt Dec 15, 2020
- *
- * @author Đỗ Tuấn Anh <daclip26@gmail.com>
- */
+
 //Form chung cho các panel kế thừa
 public abstract class ManagerController {
 
@@ -46,6 +42,7 @@ public abstract class ManagerController {
     private void addEvent() {
         // Hiển thị place holder 
         view.getTxtSearch().addFocusListener(new FocusAdapter() {
+            @Override
             public void focusGained(FocusEvent evt) {
                 if (view.getTxtSearch().getText().equals("Search")) {
                     view.getTxtSearch().setText("");
@@ -53,6 +50,7 @@ public abstract class ManagerController {
                 }
             }
 
+            @Override
             public void focusLost(FocusEvent evt) {
                 if (view.getTxtSearch().getText().equals("") || view.getTxtSearch().getText().equals("Search")) {
                     view.getTxtSearch().setText("Search");
