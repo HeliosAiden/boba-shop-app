@@ -49,7 +49,7 @@ public class FoodCategoryPopupView extends javax.swing.JFrame implements PopupVi
         jPanel1.setPreferredSize(new java.awt.Dimension(300, 50));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); 
         lbTitle.setText("Thêm loại món");
         jPanel1.add(lbTitle, new java.awt.GridBagConstraints());
 

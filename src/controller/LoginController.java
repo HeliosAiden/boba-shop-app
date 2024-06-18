@@ -59,7 +59,7 @@ public class LoginController {
                 view.showError("Mật khẩu sai");
                 return;
             }
-            // SessionManager.create(employee);//Khởi tạo session
+            employeeDao.setEmployee(employee);
 
             switch (employee.getPermission()) {
                 case MANAGER -> //Admin controller
@@ -78,7 +78,7 @@ public class LoginController {
                     view.dispose();
                 }
             }
-            //Seller Controller
+            
                     } catch (SQLException e) {
             view.showError(e);
         }

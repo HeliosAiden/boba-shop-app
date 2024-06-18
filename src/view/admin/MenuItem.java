@@ -206,7 +206,7 @@ public class MenuItem extends javax.swing.JPanel {
         jPanel2.setOpaque(false);
         jPanel2.setPreferredSize(new java.awt.Dimension(155, 45));
 
-        lbMenuName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbMenuName.setFont(new java.awt.Font("Segoe UI", 0, 14)); 
         lbMenuName.setText("Menu Name");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

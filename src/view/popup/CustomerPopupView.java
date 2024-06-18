@@ -108,7 +108,7 @@ public class CustomerPopupView extends javax.swing.JFrame implements PopupView {
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 50));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); 
         lbTitle.setText("Thêm khách hàng ");
         jPanel1.add(lbTitle, new java.awt.GridBagConstraints());
 

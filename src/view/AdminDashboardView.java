@@ -118,7 +118,7 @@ public class AdminDashboardView extends javax.swing.JFrame {
         panelHeader.setPreferredSize(new java.awt.Dimension(200, 50));
         panelHeader.setLayout(new java.awt.GridBagLayout());
 
-        lbName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbName.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         lbName.setForeground(new java.awt.Color(255, 255, 255));
         lbName.setText("Trần Đức Cường");
         gridBagConstraints = new java.awt.GridBagConstraints();

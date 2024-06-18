@@ -185,7 +185,7 @@ public abstract class ManagerPaneView<T extends Models> extends JPanel {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 14));
         btnDelete.setText("Xóa");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -195,7 +195,7 @@ public abstract class ManagerPaneView<T extends Models> extends JPanel {
         gridBagConstraints.insets = new java.awt.Insets(15, 5, 15, 5);
         jPanel1.add(btnDelete, gridBagConstraints);
 
-        btnSync.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSync.setFont(new java.awt.Font("Segoe UI", 0, 14));
         btnSync.setText("Sync");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -205,7 +205,7 @@ public abstract class ManagerPaneView<T extends Models> extends JPanel {
         gridBagConstraints.insets = new java.awt.Insets(15, 5, 15, 5);
         jPanel1.add(btnSync, gridBagConstraints);
 
-        btnEdit.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnEdit.setFont(new java.awt.Font("Segoe UI", 0, 14));
         btnEdit.setText("Sửa");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -215,7 +215,7 @@ public abstract class ManagerPaneView<T extends Models> extends JPanel {
         gridBagConstraints.insets = new java.awt.Insets(15, 5, 15, 5);
         jPanel1.add(btnEdit, gridBagConstraints);
 
-        btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 14));
         btnAdd.setText("Thêm");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;

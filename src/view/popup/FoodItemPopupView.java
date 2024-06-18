@@ -183,7 +183,7 @@ public class FoodItemPopupView extends javax.swing.JFrame implements PopupView {
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 50));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbTitle.setText("Thêm món ăn");
         jPanel1.add(lbTitle, new java.awt.GridBagConstraints());
 

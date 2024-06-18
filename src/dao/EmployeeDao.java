@@ -9,6 +9,16 @@ import model.Employee;
 
 public class EmployeeDao extends Dao<Employee> {
 
+    public static Employee employee;
+
+    public void setEmployee(Employee employee) {
+        EmployeeDao.employee = employee;
+    }
+
+    public static Employee getEmployee() {
+        return employee;
+    }
+
     @Override
     public ArrayList<Employee> getAll() throws SQLException {
         ArrayList<Employee> employees = new ArrayList<>();

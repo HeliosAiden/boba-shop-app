@@ -123,7 +123,7 @@ public class EmployeePopupView extends javax.swing.JFrame implements PopupView {
         jPanel2.setPreferredSize(new java.awt.Dimension(350, 50));
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbTitle.setText("Thêm nhân viên");
         jPanel2.add(lbTitle, new java.awt.GridBagConstraints());
 
