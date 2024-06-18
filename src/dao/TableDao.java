@@ -7,10 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import model.Table;
 
-/**
- * @createAt Nov 28, 2020
- * @author Tran Duc Cuong<clonebmn2itt@gmail.com>
- */
+
 public class TableDao extends Dao<Table> {
 
     @Override
