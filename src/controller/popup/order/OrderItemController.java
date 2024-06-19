@@ -5,11 +5,7 @@ import javax.swing.JPanel;
 import model.OrderItem;
 import view.popup.order.OrderItemPane;
 
-/**
- * createAt Dec 21, 2020
- *
- * @author Đỗ Tuấn Anh <daclip26@gmail.com>
- */
+
 public class OrderItemController {
 
     private ArrayList<OrderItem> orderItems;

@@ -12,6 +12,6 @@ public class IconManager {
     }
 
     public Icon getIcon(String name) {
-        return new ImageIcon(getClass().getResource(iconsPath + name));
+        return new ImageIcon(iconsPath + name);
     }
 }

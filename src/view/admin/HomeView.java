@@ -41,13 +41,13 @@ public class HomeView extends javax.swing.JPanel {
         });
         setLayout(null);
 
-        labLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/KCSA.png"))); // NOI18N
+        labLogo.setIcon(new javax.swing.ImageIcon("/assets/dbimgs/dbmilk_tea_logo.png"));
         labLogo.setPreferredSize(new java.awt.Dimension(400, 400));
         add(labLogo);
         labLogo.setBounds(780, 10, 200, 190);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home-background.png"))); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        jLabel1.setIcon(new javax.swing.ImageIcon("assets/imgs/home-background.png"));
         jLabel1.setToolTipText("");
         jLabel1.setMaximumSize(new java.awt.Dimension(10080000, 68000000));
         add(jLabel1);

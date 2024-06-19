@@ -104,7 +104,7 @@ public class OrderItem extends Models {
         oi.setIdOrder(rs.getInt("idOrder"));
         oi.setIdTopping(rs.getInt("idTopping"));
         oi.setQuantity(rs.getInt("quantity"));
-        oi.setFoodPrice(rs.getInt("foodPrice"));
+        oi.setFoodPrice(rs.getInt("unitPrice"));
         oi.setToppingPrice(rs.getInt("toppingPrice"));
         oi.setNote(rs.getNString("note"));
         return oi;
