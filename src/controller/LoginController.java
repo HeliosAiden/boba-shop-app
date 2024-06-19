@@ -7,7 +7,10 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 
 import model.Employee;
+import view.AdminDashboardView;
+import view.EmployeeDashboardView;
 import view.LoginView;
+import view.admin.HomeView;
 
 
 public class LoginController {
@@ -63,17 +66,21 @@ public class LoginController {
             }
 
             // Khởi tạo 1 phiên đăng nhập cho employee
-            employeeDao.setEmployee(employee);
-            employeeDao.setStartTime(new Timestamp(System.currentTimeMillis()));
+            EmployeeDao.setEmployee(employee);
+            EmployeeDao.setStartTime(new Timestamp(System.currentTimeMillis()));
+            EmployeeDao.setEndTime(null);
 
             switch (employee.getPermission()) {
-                case MANAGER -> //Admin controller
-                    // AdminDashboardController adminController = new AdminDashboardController(new AdminDashboardView());
-                    // adminController.getView().setPanel(new HomeView());
+                case MANAGER -> {
+                    AdminDashboardController adminController = new AdminDashboardController(new AdminDashboardView());
+                    adminController.getView().setPanel(new HomeView());
                     view.dispose();// Tắt form đăng nhập
-                case STAFF -> //EmployeeDashboardController employeeController = new EmployeeDashboardController(new EmployeeDashboardView());
-                    // employeeController.getView().setPanel(new HomeView());
+                }
+                case STAFF -> {
+                    EmployeeDashboardController employeeController = new EmployeeDashboardController(new EmployeeDashboardView());
+                    employeeController.getView().setPanel(new HomeView());
                     view.dispose();// Tắt form đăng nhập
+                }
                 case INACTIVE -> {
                     view.showError("Tài khoản của bạn đã bị khóa.\nVui lòng liên hệ admin để biết thêm chi tiết");
                     view.dispose();

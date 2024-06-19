@@ -14,11 +14,11 @@ public class EmployeeDao extends Dao<Employee> {
     public static Employee employee;
     public static Timestamp startTime, endTime;
 
-    public void setStartTime(Timestamp startTime) {
+    public static void setStartTime(Timestamp startTime) {
         EmployeeDao.startTime = startTime;
     }
 
-    public void setEndTime(Timestamp endTime) {
+    public static void setEndTime(Timestamp endTime) {
         EmployeeDao.endTime = endTime;
     }
 
@@ -30,7 +30,7 @@ public class EmployeeDao extends Dao<Employee> {
         return EmployeeDao.endTime;
     }
 
-    public void setEmployee(Employee employee) {
+    public static void setEmployee(Employee employee) {
         EmployeeDao.employee = employee;
     }
 
