@@ -84,7 +84,6 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         cboTable.setModel(tbComboBoxModel);
     }
 
-    @SuppressWarnings("unchecked")
     // TODO: refactor initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
@@ -149,7 +148,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         pnlTop.setPreferredSize(new java.awt.Dimension(1500, 40));
         pnlTop.setLayout(new java.awt.GridBagLayout());
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbTitle.setText("Cập nhật hóa đơn");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -235,7 +234,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel3.add(jLabel17, gridBagConstraints);
 
-        lbIdOrder.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbIdOrder.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbIdOrder.setText("001");
         lbIdOrder.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -243,7 +242,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel3.add(lbIdOrder, gridBagConstraints);
 
-        lbEmployeeName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbEmployeeName.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbEmployeeName.setForeground(new java.awt.Color(255, 0, 0));
         lbEmployeeName.setText("Trần Đức Cường");
         lbEmployeeName.setToolTipText("");
@@ -347,7 +346,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(jLabel9, gridBagConstraints);
 
-        lbTotalAmount.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTotalAmount.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbTotalAmount.setForeground(new java.awt.Color(255, 0, 0));
         lbTotalAmount.setText("1000,000,000");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -357,7 +356,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(lbTotalAmount, gridBagConstraints);
 
-        lbFinalAmount.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbFinalAmount.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbFinalAmount.setForeground(new java.awt.Color(255, 0, 0));
         lbFinalAmount.setText("1020,000,000");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -367,7 +366,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(lbFinalAmount, gridBagConstraints);
 
-        lbDiscount.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbDiscount.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbDiscount.setForeground(new java.awt.Color(255, 0, 0));
         lbDiscount.setText("0");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -377,7 +376,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(lbDiscount, gridBagConstraints);
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel13.setText("VND");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -386,7 +385,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(jLabel13, gridBagConstraints);
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel14.setText("VND");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -395,7 +394,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(jLabel14, gridBagConstraints);
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel15.setText("%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -412,7 +411,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(jLabel10, gridBagConstraints);
 
-        lbPaidAmount.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbPaidAmount.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbPaidAmount.setForeground(new java.awt.Color(255, 0, 0));
         lbPaidAmount.setText("1020,000,000");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -422,7 +421,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(lbPaidAmount, gridBagConstraints);
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel16.setText("VND");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -437,7 +436,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(jLabel18, gridBagConstraints);
 
-        lbStatus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbStatus.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbStatus.setForeground(new java.awt.Color(255, 0, 0));
         lbStatus.setText("Chưa thanh toán");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -560,7 +559,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
 
         pnlFoodItem.setMaximumSize(new java.awt.Dimension(615, 10000));
         pnlFoodItem.setMinimumSize(new java.awt.Dimension(615, 1000));
-        pnlFoodItem.setName(""); // NOI18N
+        pnlFoodItem.setName("");
         pnlFoodItem.setPreferredSize(new java.awt.Dimension(615, 5000));
         pnlFoodItem.setRequestFocusEnabled(false);
         pnlFoodItem.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
@@ -724,7 +723,7 @@ public class EditOrderPopupView extends javax.swing.JFrame implements PopupView 
     public JLabel getLbStatus() {
         return lbStatus;
     }
-    
+
 
     @Override
     public void showError(String message) {

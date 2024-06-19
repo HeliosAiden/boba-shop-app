@@ -25,7 +25,6 @@ public class FoodCategoryPane extends javax.swing.JPanel {
         return foodCategory;
     }
 
-    @SuppressWarnings("unchecked")
     // TODO: Refactor initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;

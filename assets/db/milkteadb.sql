@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
--- Host: localhost    Database: milkteadb
+-- Host: 127.0.0.1    Database: milkteadb
 -- ------------------------------------------------------
 -- Server version	8.0.37
 
@@ -29,7 +29,7 @@ CREATE TABLE `customer` (
   `address` varchar(250) DEFAULT NULL,
   `birthday` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'0377079042','Nhat Anh','Nghệ An','2000-04-09 17:00:00'),(2,'0911175581','Linh',NULL,NULL);
+INSERT INTO `customer` VALUES (1,'0377079042','Nguyễn Lê Nhật Anh','Nghệ An','2000-04-08 17:00:00'),(2,'0911175581','Nguyễn Xuân Chính','Long Biên, Hà Nội',NULL),(3,'0112122133','Nguyễn Quý Đạt','','2000-04-09 22:00:00');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,12 +148,13 @@ CREATE TABLE `order` (
   `payDate` timestamp NULL DEFAULT NULL,
   `paidAmount` bigint DEFAULT '0',
   `totalAmount` bigint NOT NULL DEFAULT '0',
+  `discount` bigint DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_employee_order` (`idEmployee`),
   KEY `fk_order_table` (`idTable`),
   CONSTRAINT `fk_employee_order` FOREIGN KEY (`idEmployee`) REFERENCES `employee` (`id`),
   CONSTRAINT `fk_order_table` FOREIGN KEY (`idTable`) REFERENCES `table` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,7 +163,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (1,1,1,'local','unpaid','2020-11-24 07:28:41',NULL,0,0),(2,1,1,'online','unpaid','2020-11-24 08:05:08','2020-11-23 17:00:00',0,0);
+INSERT INTO `order` VALUES (1,1,1,'local','unpaid','2020-11-24 07:28:41',NULL,0,0,0),(2,1,1,'online','unpaid','2020-11-24 08:05:08','2020-11-23 17:00:00',0,0,0);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,8 +179,9 @@ CREATE TABLE `order_item` (
   `idFoodItem` int NOT NULL,
   `idTopping` int NOT NULL DEFAULT '0',
   `quantity` int NOT NULL DEFAULT '1',
-  `unitPrice` bigint NOT NULL DEFAULT '0',
+  `toppingPrice` bigint NOT NULL DEFAULT '0',
   `note` varchar(100) DEFAULT NULL,
+  `foodPrice` bigint NOT NULL DEFAULT '0',
   PRIMARY KEY (`idOrder`,`idFoodItem`,`idTopping`),
   KEY `fk_order_main_item` (`idFoodItem`),
   KEY `fk_order_topping` (`idTopping`),
@@ -195,7 +197,7 @@ CREATE TABLE `order_item` (
 
 LOCK TABLES `order_item` WRITE;
 /*!40000 ALTER TABLE `order_item` DISABLE KEYS */;
-INSERT INTO `order_item` VALUES (1,1,1,3,0,NULL),(1,3,2,2,0,NULL),(1,8,1,2,0,NULL),(2,8,1,2,0,NULL);
+INSERT INTO `order_item` VALUES (1,1,1,3,0,NULL,0),(1,3,2,2,0,NULL,0),(1,8,1,2,0,NULL,0),(2,8,1,2,0,NULL,0);
 /*!40000 ALTER TABLE `order_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,6 +217,7 @@ CREATE TABLE `shipment` (
   `notice` varchar(45) DEFAULT NULL,
   `startDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `endDate` timestamp NULL DEFAULT NULL,
+  `shipCost` int DEFAULT '0',
   PRIMARY KEY (`idOrder`),
   KEY `fk_ship_customer` (`idCustomer`),
   CONSTRAINT `fk_order_ship` FOREIGN KEY (`idOrder`) REFERENCES `order` (`id`),
@@ -228,7 +231,7 @@ CREATE TABLE `shipment` (
 
 LOCK TABLES `shipment` WRITE;
 /*!40000 ALTER TABLE `shipment` DISABLE KEYS */;
-INSERT INTO `shipment` VALUES (2,1,'Nguyễn Văn B','09421321323','toreceive',NULL,'2020-11-23 17:00:00',NULL);
+INSERT INTO `shipment` VALUES (2,1,'Nguyễn Văn B','09421321323','pending',NULL,'2020-11-23 17:00:00',NULL,20000);
 /*!40000 ALTER TABLE `shipment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -266,4 +269,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-18 20:01:39
+-- Dump completed on 2024-06-19 17:58:31
