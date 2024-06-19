@@ -5,11 +5,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.Timestamp;
+
 import model.Employee;
 
 public class EmployeeDao extends Dao<Employee> {
 
     public static Employee employee;
+    public static Timestamp startTime, endTime;
+
+    public void setStartTime(Timestamp startTime) {
+        EmployeeDao.startTime = startTime;
+    }
+
+    public void setEndTime(Timestamp endTime) {
+        EmployeeDao.endTime = endTime;
+    }
+
+    public static Timestamp getStartTime(){
+        return EmployeeDao.startTime;
+    }
+
+    public static Timestamp getEndTime() {
+        return EmployeeDao.endTime;
+    }
 
     public void setEmployee(Employee employee) {
         EmployeeDao.employee = employee;
@@ -31,7 +50,7 @@ public class EmployeeDao extends Dao<Employee> {
         }
         return employees;
     }
-    
+
     @Override
     public Employee get(int id) throws SQLException {
         Statement statement = conn.createStatement();

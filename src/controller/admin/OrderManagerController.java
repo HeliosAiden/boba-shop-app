@@ -76,7 +76,7 @@ public class OrderManagerController extends ManagerController {
                 Table t = o.getTable();
                 t.setStatus(TableStatus.FREE);
                 shipmentDao.deleteById(id);
-                orderDao.deleteItems(id); // Xóa item trong order 
+                orderDao.deleteItems(id); // Xóa item trong order
                 tableDao.update(t); // Trả bàn
                 orderDao.deleteById(id); // Xóa order
             }
@@ -86,6 +86,7 @@ public class OrderManagerController extends ManagerController {
         }
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void updateData() {
         try {
@@ -102,6 +103,7 @@ public class OrderManagerController extends ManagerController {
         }
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void actionSearch() {
         try {

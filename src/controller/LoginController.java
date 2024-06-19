@@ -4,6 +4,8 @@ import dao.EmployeeDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+
 import model.Employee;
 import view.LoginView;
 
@@ -59,7 +61,10 @@ public class LoginController {
                 view.showError("Mật khẩu sai");
                 return;
             }
+
+            // Khởi tạo 1 phiên đăng nhập cho employee
             employeeDao.setEmployee(employee);
+            employeeDao.setStartTime(new Timestamp(System.currentTimeMillis()));
 
             switch (employee.getPermission()) {
                 case MANAGER -> //Admin controller
@@ -78,10 +83,10 @@ public class LoginController {
                     view.dispose();
                 }
             }
-            
+
                     } catch (SQLException e) {
             view.showError(e);
         }
     }
-    
+
 }
