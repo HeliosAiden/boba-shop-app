@@ -4,7 +4,6 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import javax.imageio.ImageIO;
@@ -15,18 +14,16 @@ import org.imgscalr.Scalr;
 
 public class ImageManager {
 
-    public static String resourcesPath = "/";
-    public static String imagesPath = resourcesPath + "images/";
+    public static String imagesPath =  "images/";
 
     public ImageManager() {
     }
 
     public ImageIcon getImage(String name) {
         try {
-            URL pathImage = getClass().getResource(imagesPath + name);
-            return new ImageIcon(pathImage);
+            return new ImageIcon(imagesPath + name);
         } catch (Exception e) {
-            return new ImageIcon(getClass().getResource(imagesPath + "tra-hoa-hong-da.png"));
+            return new ImageIcon(imagesPath + "tra-hoa-hong-da.png");
         }
     }
 

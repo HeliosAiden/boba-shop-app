@@ -16,19 +16,14 @@ import utils.StringToSlug;
 import view.ChooseImageView;
 import view.popup.FoodItemPopupView;
 
-/**
- * createAt Dec 17, 2020
- *
- * @author Đỗ Tuấn Anh <daclip26@gmail.com>
- * Popup controller mẫu
- */
+
 public class FoodItemPopupController {
 
     FoodItemDao foodItemDao = new FoodItemDao();
     FoodCategoryDao foodCategoryDao = new FoodCategoryDao();
     ChooseImageView chooseImageView = new ChooseImageView();
     ImageManager imageManager = new ImageManager();
-    String resourcesPath = getClass().getResource("/images/").getPath();
+    String resourcesPath = "assets/imgs/";
     JFrame previousView;
 
     private ActionListener eventShowChooseFileDialog(FoodItemPopupView view) {

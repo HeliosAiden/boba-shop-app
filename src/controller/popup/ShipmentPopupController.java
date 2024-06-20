@@ -1,6 +1,7 @@
 package controller.popup;
 
 import dao.CustomerDao;
+import dao.EmployeeDao;
 import dao.ShipmentDao;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -29,14 +30,15 @@ public class ShipmentPopupController {
                 edit(view, idOrder, sc, ec);
                 return;
             }
+            shipment.setShipperName(EmployeeDao.getEmployee().getName());
             shipment = new Shipment();
             shipment.setShipCost(0);
             shipment.setIdOrder(idOrder);
             shipment.setCustomer(customerDao.getAll().get(0));
-            shipment.setStatus(ShipmentStatus.TOPAY);
+            shipment.setStatus(ShipmentStatus.PENDING);
             shipmentDao.save(shipment);
             edit(view, idOrder, sc, ec);
-        } catch (Exception e) {
+        } catch (SQLException e) {
             ec.onError(e);
             view.dispose();
         }

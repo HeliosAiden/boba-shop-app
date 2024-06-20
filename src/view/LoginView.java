@@ -205,8 +205,8 @@ public class LoginView extends javax.swing.JFrame {
         pack();
     }
 
-    private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtPasswordKeyPressed
-        // TODO add your handling code here:
+    private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {
+        
     }
 
 }

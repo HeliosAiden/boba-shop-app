@@ -213,7 +213,7 @@ CREATE TABLE `shipment` (
   `idCustomer` int NOT NULL,
   `shipperName` varchar(50) NOT NULL,
   `shipperPhoneNumber` varchar(20) NOT NULL,
-  `status` varchar(45) NOT NULL DEFAULT 'topay' COMMENT 'topay - chờ xác nhận\ntoship - chờ lấy hàng\ntoreceive - đang giao\ncompleted - hoàn thành\ncancelled - đã hủy',
+  `status` varchar(45) NOT NULL DEFAULT 'pending' COMMENT 'pending - chờ xác nhận\nreceiving - chờ lấy hàng\nshipping - đang giao\ncompleted - hoàn thành\ncancelled - đã hủy',
   `notice` varchar(45) DEFAULT NULL,
   `startDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `endDate` timestamp NULL DEFAULT NULL,

@@ -19,7 +19,7 @@ public class Main{
     }
     public static void main(String[] args) {
         try {
-            javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+            javax.swing.UIManager.setLookAndFeel("com.formdev.flatlaf.FlatIntelliJLaf");
             System.out.println("Khởi tạo look and feel thành công!");
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException ex) {
             System.err.println("Khởi tạo look and feel thất bại!");
