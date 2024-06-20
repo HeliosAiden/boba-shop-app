@@ -4,9 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.sql.Timestamp;
-
+import java.util.ArrayList;
 import model.Employee;
 
 public class EmployeeDao extends Dao<Employee> {
@@ -68,17 +67,16 @@ public class EmployeeDao extends Dao<Employee> {
         if (t == null) {
             throw new SQLException("Employee rỗng");
         }
-        String query = "INSERT INTO `employee` (`username`, `password`, `name`, `phoneNumber`, `startDate`, `permission`, `salary`)"
+        String query = "INSERT INTO `employee` (`username`, `password`, `name`, `phoneNumber`, `startDate`, `permissionName`, `permissionId`)"
                 + " VALUES (?, ?, ?, ?, current_timestamp(), ?, ?)";
 
         PreparedStatement stmt = conn.prepareStatement(query);
-//            stmt.setLong(0, t.getId());
         stmt.setNString(1, t.getUsername());
         stmt.setNString(2, t.getPassword());
         stmt.setNString(3, t.getName());
         stmt.setNString(4, t.getPhoneNumber());
-        stmt.setNString(5, t.getPermission().getId());
-        stmt.setInt(6, t.getSalary());
+        stmt.setNString(5, t.getPermission().getName());
+        stmt.setNString(6, t.getPermission().getId());
         int row = stmt.executeUpdate();
     }
 
@@ -87,14 +85,14 @@ public class EmployeeDao extends Dao<Employee> {
         if (t == null) {
             throw new SQLException("Employee rong");
         }
-        String query = "UPDATE `employee` SET `username` = ?, `password` = ?, `name` = ?, `phoneNumber` = ?, `permission` = ?, `salary` = ? WHERE `id` = ?";
+        String query = "UPDATE `employee` SET `username` = ?, `password` = ?, `name` = ?, `phoneNumber` = ?, `permissionName` = ?, `permissionId` = ? WHERE `id` = ?";
         PreparedStatement stmt = conn.prepareStatement(query);
         stmt.setNString(1, t.getUsername());
         stmt.setNString(2, t.getPassword());
         stmt.setNString(3, t.getName());
         stmt.setNString(4, t.getPhoneNumber());
-        stmt.setNString(5, t.getPermission().getId());
-        stmt.setInt(6, t.getSalary());
+        stmt.setNString(5, t.getPermission().getName());
+        stmt.setNString(6, t.getPermission().getId());
         stmt.setInt(7, t.getId());
         stmt.executeUpdate();
     }

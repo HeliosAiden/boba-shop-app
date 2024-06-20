@@ -1,16 +1,13 @@
 package controller;
 
-import controller.employee.InformationController;
-import dao.EmployeeDao;
 import controller.admin.CustomerManagerController;
 import controller.admin.OrderManagerController;
 import controller.admin.ShipmentManagerController;
-import java.sql.SQLException;
+import controller.employee.InformationController;
+import dao.EmployeeDao;
 import java.sql.Timestamp;
-
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-// import main.SessionManager;
 import model.Employee;
 import utils.IconManager;
 import view.EmployeeDashboardView;
@@ -73,7 +70,6 @@ public class EmployeeDashboardController {
         MenuItem menuQLGH = new MenuItem("QLGH", im.getIcon("truck_25px.png"), "Quản lý giao hàng");
         MenuItem menuTL = new MenuItem("TL", im.getIcon("settings_25px.png"), "Thiết lập");
         menuTL.addSubMenu(new MenuItem("TTCN", im.getIcon("about_25px.png"), "Thông tin cá nhân"));
-        menuTL.addSubMenu(new MenuItem("TLGD", im.getIcon("contrast_25px.png"), "Giao diện"));
         menuTL.addSubMenu(new MenuItem("TT", im.getIcon("help_25px.png"), "About us"));
         sideBarController.addMenu(menuKH, menuQLDDH, menuQLGH, menuTL);
         sideBarController.addMenuEvent(this::onMenuChange);

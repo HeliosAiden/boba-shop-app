@@ -30,8 +30,9 @@ public class ShipmentPopupController {
                 edit(view, idOrder, sc, ec);
                 return;
             }
-            shipment.setShipperName(EmployeeDao.getEmployee().getName());
             shipment = new Shipment();
+            shipment.setShipperName(EmployeeDao.getEmployee().getName());
+            shipment.setShipperPhoneNumber(EmployeeDao.getEmployee().getPhoneNumber());
             shipment.setShipCost(0);
             shipment.setIdOrder(idOrder);
             shipment.setCustomer(customerDao.getAll().get(0));

@@ -7,11 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import model.FoodItem;
 
-/**
- * createAt Dec 14, 2020
- *
- * @author Đỗ Tuấn Anh <daclip26@gmail.com>
- */
+
 public class ToppingPopupView extends javax.swing.JFrame {
 
     private javax.swing.JLabel VND;

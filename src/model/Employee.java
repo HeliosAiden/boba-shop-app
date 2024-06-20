@@ -11,7 +11,6 @@ public class Employee extends Models {
     protected String username, password, name, phoneNumber;
     protected EmployeePermission permission;
     protected Date startDate;
-    protected int salary;
 
     public Employee() {
     }
@@ -72,14 +71,6 @@ public class Employee extends Models {
         this.permission = permission;
     }
 
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = Math.max(0, salary);
-    }
-
     @Override
     public String toString() {
         return name;
@@ -106,7 +97,6 @@ public class Employee extends Models {
         return new Object[]{
             id, name, username, password,
             phoneNumber, startDate, permission.getName(),
-            salary
         };
     }
 
