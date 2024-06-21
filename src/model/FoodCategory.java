@@ -10,8 +10,7 @@ public class FoodCategory extends Models {
     protected int id;
     protected String name;
 
-    public FoodCategory() {
-    }
+    public FoodCategory() {}
 
     public int getId() {
         return id;

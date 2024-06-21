@@ -118,9 +118,9 @@ public class FoodItemPopupController {
         view.getTxtUnitName().setText(foodItem.getUnitName());
         view.getTxtUnitPrice().setText(foodItem.getUnitPrice() + "");
 
-        FoodCategory fc = new FoodCategory();
-        fc.setId(foodItem.getIdCategory());
-        view.getCboCategory().setSelectedItem(fc);
+        //FoodCategory fc = new FoodCategory();
+        // fc.setId(foodItem.getIdCategory());
+        // view.getCboCategory().setSelectedItem(fc);
         if (isExistsImage(foodItem.getUrlImage())) {
             view.getTxtUrlImage().setText(foodItem.getUrlImage());
         } else {
@@ -131,6 +131,14 @@ public class FoodItemPopupController {
         } catch (Exception e) {
             ec.onError(e);
         }
+        // view.getCboCategory().addActionListener(new ActionListener() {
+        //    @Override
+        //    public void actionPerformed(ActionEvent evt) {
+        //        FoodCategory category = (FoodCategory) view.getCboCategory().getSelectedItem();
+        //        fc.setId(category.getId());
+        //     view.getCboCategory().setSelectedItem(fc);
+        //    }
+        // });
         view.getBtnChooseImage().addActionListener(eventShowChooseFileDialog(view));
         view.getBtnOK().addActionListener(evt -> {
             try {

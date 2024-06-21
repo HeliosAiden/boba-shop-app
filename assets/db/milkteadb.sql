@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: milkteadb
+-- Host: localhost    Database: milkteadb
 -- ------------------------------------------------------
 -- Server version	8.0.37
 
@@ -29,7 +29,7 @@ CREATE TABLE `customer` (
   `address` varchar(250) DEFAULT NULL,
   `birthday` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'0377079042','Nguyễn Lê Nhật Anh','Nghệ An','2000-04-08 17:00:00'),(2,'0911175581','Nguyễn Xuân Chính','Long Biên, Hà Nội',NULL),(3,'0112122133','Nguyễn Quý Đạt','','2000-04-09 22:00:00');
+INSERT INTO `customer` VALUES (1,'0377079042','Nguyễn Lê Nhật Anh','Nghệ An','2000-04-08 17:00:00'),(2,'0911175581','Nguyễn Xuân Chính','Long Biên, Hà Nội',NULL),(3,'0112122133','Nguyễn Quý Đạt','','2000-04-09 22:00:00'),(4,'0453534534','Kim Thị Hồng Quyên','Cầu GIấy',NULL);
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +60,7 @@ CREATE TABLE `employee` (
   `permissionId` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'admin','admin','Admin',NULL,'2020-11-23 17:00:00','Quản lý','1'),(2,'nhanvien','12345','Nhân Viên 1','0911175581','2020-11-24 05:15:08','Nhân viên','2');
+INSERT INTO `employee` VALUES (1,'admin','admin','Admin','0377079042','2020-11-23 17:00:00','Quản lý','manager'),(2,'nhanvien','12345','Nhân Viên 1','0911175581','2020-11-24 05:15:08','Nhân viên','staff'),(3,'heliosaiden','12345','Nguyễn Lê Nhật Anh','0377079042','2024-06-20 10:38:00','Nhân viên','staff');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `food_category` (
   `slug` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +95,7 @@ CREATE TABLE `food_category` (
 
 LOCK TABLES `food_category` WRITE;
 /*!40000 ALTER TABLE `food_category` DISABLE KEYS */;
-INSERT INTO `food_category` VALUES (1,'Đồ Ăn','do-an'),(2,'Trà Sữa','tra-sua'),(3,'Cà Phê','ca-phe'),(4,'Topping','topping');
+INSERT INTO `food_category` VALUES (1,'Đồ Ăn','do-an'),(2,'Trà Sữa','tra-sua'),(3,'Cà Phê','ca-phe'),(4,'Topping','topping'),(5,'Trà hoa quả','tra-hoa-qua');
 /*!40000 ALTER TABLE `food_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,7 +118,7 @@ CREATE TABLE `food_item` (
   UNIQUE KEY `name` (`name`),
   KEY `fk_item_category` (`idCategory`),
   CONSTRAINT `fk_item_category` FOREIGN KEY (`idCategory`) REFERENCES `food_category` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +127,7 @@ CREATE TABLE `food_item` (
 
 LOCK TABLES `food_item` WRITE;
 /*!40000 ALTER TABLE `food_item` DISABLE KEYS */;
-INSERT INTO `food_item` VALUES (1,'No Topping','','','Phần',0,4),(2,'Trân Châu Tuyết Sợi',NULL,NULL,'Phần',10000,4),(3,'Trân Châu Đen',NULL,NULL,'Phần',10000,4),(4,'Trân Châu Trắng',NULL,NULL,'Phần',10000,4),(5,'Trà Sữa Trân Châu',NULL,NULL,'Ly',50000,2),(6,'Trà Sữa Sương Sáo',NULL,NULL,'Ly',45000,2),(7,'Trà Sữa Matcha(L)','','','Ly',50000,1),(8,'Sữa Tươi Trân Châu Đường Đen',NULL,NULL,'Ly',45000,2),(9,'Bánh Flan','','','Cái',10000,1),(10,'Hướng dương',NULL,NULL,'Túi',10000,1),(11,'Cafe truyền thống',NULL,NULL,'Cốc',35000,3),(12,'Espresso',NULL,NULL,'Cốc',45000,3),(13,'Trà Sữa Matcha(XL)',NULL,NULL,'Ly',25000,2),(14,'Trà Sữa Ô Long','','','Ly',20000,2),(15,'Trà Đào','','tra-ao-2020-12-10-12-15-10.png','Ly',40000,2),(16,'Trà Đào(L)','','tra-ao-l-2020-12-10-12-16-17.png','Ly',50000,1);
+INSERT INTO `food_item` VALUES (1,'No Topping','','','Phần',0,4),(2,'Trân Châu Tuyết Sợi',NULL,NULL,'Phần',10000,4),(3,'Trân Châu Đen',NULL,NULL,'Phần',10000,4),(4,'Trân Châu Trắng',NULL,NULL,'Phần',10000,4),(5,'Trà Sữa Trân Châu',NULL,NULL,'Ly',50000,2),(6,'Trà Sữa Sương Sáo',NULL,NULL,'Ly',45000,2),(7,'Trà Sữa Matcha(L)','Trà sữa mát cha size L uống cho đã cái nư','tra-sua-matcha-l-2024-06-21-09-58-31.png','Ly',50000,2),(8,'Sữa Tươi Trân Châu Đường Đen','Sữa + trân châu + đường hổ = ngon =))','sua-tuoi-tran-chau-uong-en-2024-06-21-10-12-52.png','Ly',23000,2),(9,'Bánh Flan','Bánh flan thơm ngon béo ngậy','banh-flan-2024-06-21-10-09-44.png','Cái',12000,1),(10,'Hướng dương','','huong-duong-2024-06-21-10-10-54.png','Túi',8000,1),(11,'Cafe truyền thống',NULL,NULL,'Cốc',35000,3),(12,'Espresso',NULL,NULL,'Cốc',45000,3),(13,'Trà Sữa Matcha(XL)','Trà sữa matcha siêu to khổng lồ','tra-sua-matcha-xl-2024-06-21-10-15-14.png','Ly',55000,2),(14,'Trà Sữa Ô Long','','','Ly',20000,2),(15,'Trà Đào','','tra-dao-size-m.png','Ly',40000,5),(16,'Trà Đào(L)','','tra-dao-size-l.png','Ly',50000,5),(17,'Trà Đào Cam Sả','Món đang rất trending','tra-ao-cam-sa-2024-06-21-10-11-32.png','Ly',35000,5);
 /*!40000 ALTER TABLE `food_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,7 +154,7 @@ CREATE TABLE `order` (
   KEY `fk_order_table` (`idTable`),
   CONSTRAINT `fk_employee_order` FOREIGN KEY (`idEmployee`) REFERENCES `employee` (`id`),
   CONSTRAINT `fk_order_table` FOREIGN KEY (`idTable`) REFERENCES `table` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +163,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (1,1,1,'local','unpaid','2020-11-24 07:28:41',NULL,0,0,0),(2,1,1,'online','unpaid','2020-11-24 08:05:08','2020-11-23 17:00:00',0,0,0);
+INSERT INTO `order` VALUES (2,1,1,'online','paid','2020-11-24 08:05:08','2024-06-20 19:33:38',105000,105000,0),(4,1,2,'online','paid','2024-06-19 15:42:03','2024-06-19 09:06:00',165000000,155000,0),(5,2,2,'online','unpaid','2024-06-19 16:59:03',NULL,0,60000,0),(6,2,1,'online','paid','2024-06-19 17:04:37','2024-06-19 10:05:39',900000,85000,0),(8,3,2,'local','unpaid','2024-06-20 14:14:05',NULL,0,0,0);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,7 +197,7 @@ CREATE TABLE `order_item` (
 
 LOCK TABLES `order_item` WRITE;
 /*!40000 ALTER TABLE `order_item` DISABLE KEYS */;
-INSERT INTO `order_item` VALUES (1,1,1,3,0,NULL,0),(1,3,2,2,0,NULL,0),(1,8,1,2,0,NULL,0),(2,8,1,2,0,NULL,0);
+INSERT INTO `order_item` VALUES (2,2,1,2,0,'',10000),(2,8,1,1,0,NULL,45000),(2,15,1,1,0,'',40000),(4,2,1,1,0,'',10000),(4,3,1,1,0,'',10000),(4,4,1,1,0,'',10000),(4,8,1,1,0,'',45000),(4,15,1,2,0,'',40000),(5,4,1,1,0,'',10000),(5,5,1,1,0,'',50000),(6,12,1,1,0,'',45000),(6,14,1,2,0,'',20000);
 /*!40000 ALTER TABLE `order_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,7 +213,7 @@ CREATE TABLE `shipment` (
   `idCustomer` int NOT NULL,
   `shipperName` varchar(50) NOT NULL,
   `shipperPhoneNumber` varchar(20) NOT NULL,
-  `status` varchar(45) NOT NULL DEFAULT 'pending' COMMENT 'pending - chờ xác nhận\nreceiving - chờ lấy hàng\nshipping - đang giao\ncompleted - hoàn thành\ncancelled - đã hủy',
+  `status` varchar(45) NOT NULL DEFAULT 'topay' COMMENT 'topay - chờ xác nhận\ntoship - chờ lấy hàng\ntoreceive - đang giao\ncompleted - hoàn thành\ncancelled - đã hủy',
   `notice` varchar(45) DEFAULT NULL,
   `startDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `endDate` timestamp NULL DEFAULT NULL,
@@ -231,7 +231,7 @@ CREATE TABLE `shipment` (
 
 LOCK TABLES `shipment` WRITE;
 /*!40000 ALTER TABLE `shipment` DISABLE KEYS */;
-INSERT INTO `shipment` VALUES (2,1,'Nguyễn Văn B','09421321323','pending',NULL,'2020-11-23 17:00:00',NULL,20000);
+INSERT INTO `shipment` VALUES (2,4,'Nguyễn Văn B','09421321323','pending',NULL,'2020-11-23 17:00:00',NULL,20000);
 /*!40000 ALTER TABLE `shipment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,7 +247,7 @@ CREATE TABLE `table` (
   `name` varchar(45) NOT NULL,
   `status` varchar(45) NOT NULL DEFAULT 'free' COMMENT 'free-Trống\nserving-Đang phục vụ\nreserving-Đặt trước',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,7 +256,7 @@ CREATE TABLE `table` (
 
 LOCK TABLES `table` WRITE;
 /*!40000 ALTER TABLE `table` DISABLE KEYS */;
-INSERT INTO `table` VALUES (1,'Bàn 1','free'),(2,'Bàn 2','free'),(3,'Bàn 3','free');
+INSERT INTO `table` VALUES (1,'Bàn 1','free'),(2,'Bàn 2','free'),(3,'Bàn 3','serving'),(4,'Bàn 4','free'),(5,'Bàn 5','free'),(6,'Khách mang đi','free');
 /*!40000 ALTER TABLE `table` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -269,4 +269,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-19 17:58:31
+-- Dump completed on 2024-06-21 12:05:03

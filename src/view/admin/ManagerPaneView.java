@@ -22,6 +22,17 @@ public abstract class ManagerPaneView<T extends Models> extends JPanel {
     IconManager im = new IconManager();
     ArrayList<T> tableData = new ArrayList<>();
 
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnSync;
+    private javax.swing.JComboBox<String> cboSearchField;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblData;
+    private javax.swing.JTextField txtSearch;
+
     public ManagerPaneView() {
         initComponents();
         tblData.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
@@ -36,7 +47,6 @@ public abstract class ManagerPaneView<T extends Models> extends JPanel {
         btnDelete.setIcon(im.getIcon("delete_25px.png"));
         btnSync.setIcon(im.getIcon("sync_25px.png"));
         tblData.setModel(tableModel);
-        // cbx_list.putClientProperty("JButton.buttonType", "roundRect");
         btnAdd.putClientProperty("JButton.buttonType", "roundRect");
         btnDelete.putClientProperty("JButton.buttonType", "roundRect");
         btnEdit.putClientProperty("JButton.buttonType", "roundRect");
@@ -245,18 +255,6 @@ public abstract class ManagerPaneView<T extends Models> extends JPanel {
         jPanel2.add(cboSearchField);
 
         add(jPanel2, java.awt.BorderLayout.PAGE_START);
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnEdit;
-    private javax.swing.JButton btnSync;
-    private javax.swing.JComboBox<String> cboSearchField;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblData;
-    private javax.swing.JTextField txtSearch;
-    // End of variables declaration//GEN-END:variables
 }
