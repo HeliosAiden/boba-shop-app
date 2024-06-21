@@ -11,12 +11,15 @@ import model.Customer;
 
 public class CustomerRenderJList extends javax.swing.JPanel implements ListCellRenderer<Customer> {
 
+    private javax.swing.JLabel lbAddress;
+    private javax.swing.JLabel lbName;
+    private javax.swing.JLabel lbPhoneNumber;
+
     public CustomerRenderJList() {
         initComponents();
         setPreferredSize(new Dimension(400, 75));
     }
 
-    @SuppressWarnings("unchecked")
     // TODO: Refactor initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
@@ -27,7 +30,7 @@ public class CustomerRenderJList extends javax.swing.JPanel implements ListCellR
 
         setLayout(new java.awt.GridBagLayout());
 
-        lbName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbName.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbName.setForeground(new java.awt.Color(255, 0, 0));
         lbName.setText("Trần Đức Cường");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -52,7 +55,7 @@ public class CustomerRenderJList extends javax.swing.JPanel implements ListCellR
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         add(lbAddress, gridBagConstraints);
 
-        lbPhoneNumber.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbPhoneNumber.setFont(new java.awt.Font("Segoe UI", 1, 12));
         lbPhoneNumber.setText("(0911175581)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -62,13 +65,8 @@ public class CustomerRenderJList extends javax.swing.JPanel implements ListCellR
         gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         add(lbPhoneNumber, gridBagConstraints);
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lbAddress;
-    private javax.swing.JLabel lbName;
-    private javax.swing.JLabel lbPhoneNumber;
-    // End of variables declaration//GEN-END:variables
 
     @Override
     public Component getListCellRendererComponent(JList<? extends Customer> list, Customer customer, int index, boolean isSelected, boolean cellHasFocus) {

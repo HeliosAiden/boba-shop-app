@@ -5,6 +5,7 @@ import dao.FoodItemDao;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.sql.SQLException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -30,7 +31,7 @@ public class FoodItemPopupController {
         return evt -> {
             int otp = chooseImageView.showOpenDialog(view);
             switch (otp) {
-                case JFileChooser.APPROVE_OPTION:
+                case JFileChooser.APPROVE_OPTION -> {
                     File file = chooseImageView.getSelectedFile();
                     BufferedImage bi;
                     try {
@@ -42,10 +43,8 @@ public class FoodItemPopupController {
                     } catch (Exception e) {
                         view.showError(e);
                     }
-                    break;
-                case JFileChooser.CANCEL_OPTION:
-                    view.getTxtUrlImage().setText("");
-                    break;
+                }
+                case JFileChooser.CANCEL_OPTION -> view.getTxtUrlImage().setText("");
 
             }
         };
@@ -63,7 +62,7 @@ public class FoodItemPopupController {
             for (FoodCategory foodCategory : foodCategoryDao.getAll()) {
                 view.getFoodCategoryComboBoxModel().addElement(foodCategory);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
     }
 
@@ -113,10 +112,6 @@ public class FoodItemPopupController {
         initComboBox(view);
         view.getLbTitle().setText("Sửa món ăn - " + foodItem.getId());
         view.getBtnOK().setText("Cập nhật");
-
-        if (foodItem == null) {
-            view.showError("Món không tồn tại");
-        }
         view.getTxtName().setText(foodItem.getName());
         view.getTxtDescription().setText(foodItem.getDescription());
         view.getTxtUrlImage().setText(foodItem.getUrlImage());

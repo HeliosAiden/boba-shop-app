@@ -101,10 +101,8 @@ public class OrderItemPane extends javax.swing.JPanel {
         btnMinus.setText("-");
         btnMinus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMinus.setFocusable(false);
-        btnMinus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMinusActionPerformed(evt);
-            }
+        btnMinus.addActionListener((java.awt.event.ActionEvent evt) -> {
+            btnMinusActionPerformed(evt);
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -115,10 +113,8 @@ public class OrderItemPane extends javax.swing.JPanel {
         btnPlus.setText("+");
         btnPlus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPlus.setFocusable(false);
-        btnPlus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPlusActionPerformed(evt);
-            }
+        btnPlus.addActionListener((java.awt.event.ActionEvent evt) -> {
+            btnPlusActionPerformed(evt);
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -137,17 +133,17 @@ public class OrderItemPane extends javax.swing.JPanel {
         jPanel3.setOpaque(false);
         jPanel3.setPreferredSize(new java.awt.Dimension(300, 75));
 
-        lbFoodName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbFoodName.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbFoodName.setText("Trà Sữa Trân Châu Khổng Lồ");
 
-        lbToppingName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbToppingName.setFont(new java.awt.Font("Segoe UI", 1, 12));
         lbToppingName.setForeground(new java.awt.Color(153, 153, 153));
         lbToppingName.setText("No Topping");
 
-        lbPrice.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbPrice.setFont(new java.awt.Font("Segoe UI", 1, 14));
         lbPrice.setText("20,000");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel5.setText("VND");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

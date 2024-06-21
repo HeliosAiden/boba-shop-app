@@ -152,7 +152,6 @@ public class FoodItemPopupView extends javax.swing.JFrame implements PopupView {
         return lbPreviewImage;
     }
 
-    @SuppressWarnings("unchecked")
     // TODO: Refactor initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;

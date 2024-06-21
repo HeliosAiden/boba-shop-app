@@ -49,7 +49,6 @@ public class ChangePassView extends javax.swing.JFrame {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
     // TODO: Refactor initComponents()
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
@@ -147,10 +146,8 @@ public class ChangePassView extends javax.swing.JFrame {
         btnCancel.setText("Hủy");
         btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancel.setSelected(true);
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelActionPerformed(evt);
-            }
+        btnCancel.addActionListener((java.awt.event.ActionEvent evt) -> {
+            btnCancelActionPerformed(evt);
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -166,7 +163,7 @@ public class ChangePassView extends javax.swing.JFrame {
         jPanel4.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setBackground(new java.awt.Color(41, 207, 124));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Đổi Mật Khẩu");
         gridBagConstraints = new java.awt.GridBagConstraints();

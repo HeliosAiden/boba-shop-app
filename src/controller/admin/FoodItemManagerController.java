@@ -29,7 +29,6 @@ public class FoodItemManagerController extends ManagerController {
 
     @Override
     public void actionAdd() {
-//        popupController.add(this, new FoodItemPopupView());
         popupController.add(new FoodItemPopupView(), this::updateData, view::showError);
     }
 
@@ -44,7 +43,6 @@ public class FoodItemManagerController extends ManagerController {
                 if (foodItem == null) {
                     throw new Exception("Món bạn chọn không hợp lệ");
                 }
-//                popupController.edit(this, new FoodItemPopupView(), foodItem);
                 popupController.edit(new FoodItemPopupView(), foodItem, this::updateData, view::showError);
             }
         } catch (Exception e) {

@@ -204,21 +204,6 @@ public class EmployeePopupView extends javax.swing.JFrame implements PopupView {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel1.add(cboPermission, gridBagConstraints);
 
-        // jLabel7.setText("Tiền lương:");
-        // gridBagConstraints = new java.awt.GridBagConstraints();
-        // gridBagConstraints.gridx = 0;
-        // gridBagConstraints.gridy = 5;
-        // gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        // gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        // jPanel1.add(jLabel7, gridBagConstraints);
-
-        // spnSalary.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50000000, 100000));
-        // gridBagConstraints = new java.awt.GridBagConstraints();
-        // gridBagConstraints.gridx = 2;
-        // gridBagConstraints.gridy = 5;
-        // gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        // gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        // jPanel1.add(spnSalary, gridBagConstraints);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 

@@ -14,7 +14,7 @@ import org.imgscalr.Scalr;
 
 public class ImageManager {
 
-    public static String imagesPath =  "images/";
+    public static String imagesPath =  "assets/imgs/";
 
     public ImageManager() {
     }
@@ -34,9 +34,8 @@ public class ImageManager {
     }
 
     public String saveImage(BufferedImage bi, String name) throws IOException {
-        String pathImages = getClass().getResource(imagesPath).getPath();
         String fileName = getUniqueNameFile(name);
-        File out = new File(pathImages + fileName);
+        File out = new File(imagesPath + fileName);
         BufferedImage resizedImage = resizeImage(bi, 200);
         ImageIO.write(resizedImage, "png", out);
         return out.getName();

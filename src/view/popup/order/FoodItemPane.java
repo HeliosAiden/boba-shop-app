@@ -78,12 +78,12 @@ public class FoodItemPane extends javax.swing.JPanel {
 
         jPanel2.setOpaque(false);
 
-        lbName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbName.setFont(new java.awt.Font("Segoe UI", 1, 12));
         lbName.setText("Trà Sữa Trân Châu Đường Đen(L)");
-        lbName.setName(""); // NOI18N
+        lbName.setName("");
         lbName.setPreferredSize(new java.awt.Dimension(20, 20));
 
-        lbPrice.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbPrice.setFont(new java.awt.Font("Segoe UI", 1, 12));
         lbPrice.setForeground(new java.awt.Color(255, 0, 0));
         lbPrice.setText("50,000 VND / Ly");
 
